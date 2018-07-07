@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['fc005802eed64d89a2e2ed61995396c2.vfs.cloud9.us-west-2.amazonaw
 # Application definition
 
 INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
     'jobs.apps.JobsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -122,6 +123,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'portfolio/static/')
+    ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

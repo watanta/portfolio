@@ -1,0 +1,28 @@
+{% extends "jobs/base.html" %}
+{% load staticfiles %}
+
+   {% block body %}
+
+    <main role="main">
+        
+        <h1 class="text-center pt-3">Welcome to my Blog!</h1>
+        <br />
+        <br />
+        
+        <h2>Latest blog</h2>
+        
+        <hr />
+        
+        {% for blog in blogs.all %}
+        
+        <a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
+        {{ blog.pub_date }}
+        <br />
+        <img  src="{{ blog.image.url }}" height = 200 width = 200 >
+        <p>{{ blog.body }}</p>
+        
+        {% endfor %}
+        
+    </main>
+    
+    {%  endblock %} 
